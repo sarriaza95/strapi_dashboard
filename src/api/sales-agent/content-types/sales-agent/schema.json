@@ -1,0 +1,51 @@
+{
+  "kind": "collectionType",
+  "collectionName": "sales_agents",
+  "info": {
+    "singularName": "sales-agent",
+    "pluralName": "sales-agents",
+    "displayName": "SalesAgent",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Email": {
+      "type": "email",
+      "required": true,
+      "unique": true
+    },
+    "FirstName": {
+      "type": "string"
+    },
+    "LastName": {
+      "type": "string"
+    },
+    "sale": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::sale.sale",
+      "mappedBy": "sales_agent"
+    },
+    "sales": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::client.client",
+      "mappedBy": "sold_by"
+    },
+    "resale": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::resale.resale",
+      "inversedBy": "sales_agents"
+    },
+    "agent_goals": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::agent-goal.agent-goal",
+      "mappedBy": "sales_agent"
+    }
+  }
+}

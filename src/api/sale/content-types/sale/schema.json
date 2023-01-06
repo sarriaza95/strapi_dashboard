@@ -1,0 +1,43 @@
+{
+  "kind": "collectionType",
+  "collectionName": "sales",
+  "info": {
+    "singularName": "sale",
+    "pluralName": "sales",
+    "displayName": "Sale",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "SaleDate": {
+      "type": "datetime"
+    },
+    "SaleId": {
+      "type": "uid"
+    },
+    "SaleAmount": {
+      "type": "decimal"
+    },
+    "sales_agent": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::sales-agent.sales-agent",
+      "inversedBy": "sale"
+    },
+    "client": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::client.client",
+      "inversedBy": "sale"
+    },
+    "services": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::service.service",
+      "inversedBy": "sales_services"
+    }
+  }
+}

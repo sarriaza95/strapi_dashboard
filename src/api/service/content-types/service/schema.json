@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "services",
+  "info": {
+    "singularName": "service",
+    "pluralName": "services",
+    "displayName": "Service"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Name": {
+      "type": "string"
+    },
+    "Description": {
+      "type": "text"
+    },
+    "sales_services": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::sale.sale",
+      "mappedBy": "services"
+    },
+    "resales_service": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::resale.resale",
+      "mappedBy": "services"
+    }
+  }
+}

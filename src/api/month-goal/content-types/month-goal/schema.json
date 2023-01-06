@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "month_goals",
+  "info": {
+    "singularName": "month-goal",
+    "pluralName": "month-goals",
+    "displayName": "MonthGoal",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "MonthName": {
+      "type": "string"
+    },
+    "AmountGoal": {
+      "type": "decimal"
+    },
+    "AccumulateAmount": {
+      "type": "decimal"
+    },
+    "isActive": {
+      "type": "boolean"
+    }
+  }
+}

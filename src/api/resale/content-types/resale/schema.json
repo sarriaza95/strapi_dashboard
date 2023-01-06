@@ -1,0 +1,44 @@
+{
+  "kind": "collectionType",
+  "collectionName": "resales",
+  "info": {
+    "singularName": "resale",
+    "pluralName": "resales",
+    "displayName": "Resale",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "SaleDate": {
+      "type": "datetime"
+    },
+    "SaleId": {
+      "type": "uid",
+      "required": true
+    },
+    "SaleAmount": {
+      "type": "decimal"
+    },
+    "sales_agents": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::sales-agent.sales-agent",
+      "mappedBy": "resale"
+    },
+    "clients": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::client.client",
+      "mappedBy": "resales"
+    },
+    "services": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::service.service",
+      "inversedBy": "resales_service"
+    }
+  }
+}

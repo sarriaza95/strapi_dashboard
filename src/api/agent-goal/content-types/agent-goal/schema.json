@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "agent_goals",
+  "info": {
+    "singularName": "agent-goal",
+    "pluralName": "agent-goals",
+    "displayName": "AgentGoal"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "sales_agent": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::sales-agent.sales-agent",
+      "inversedBy": "agent_goals"
+    },
+    "AccumulateGoal": {
+      "type": "decimal"
+    },
+    "AmountGoal1": {
+      "type": "decimal"
+    },
+    "AmountGoal2": {
+      "type": "decimal"
+    },
+    "AmountGoal3": {
+      "type": "decimal"
+    },
+    "MonthName": {
+      "type": "string"
+    }
+  }
+}
